@@ -36,14 +36,17 @@ function LoadHomePage() {
 
             // using let as a variable to control text injection to the page
             let Introduction = document.getElementById("Introduction");
-            let myBio = 'My name is Mike Roe. I am a first year student just trying to get my name out there.';
+            let myBio = "My name is Mike Roe. I am a first year student just trying to get my name out there.";
             Introduction.textContent = myBio;
 
             let Description = document.getElementById("Description");
-            let PhotoInfo = 'My Graduating class from this past April. I am in the very back, second from the left with the long hair.';
+            let PhotoInfo = "My Graduating class from this past April. I am in the very back, second from the left with the long hair.";
             Description.innerHTML = PhotoInfo;
 
+            // Testing the the LoadHomePage function was running properly
+            console.log(PhotoInfo);
            };
+
 
             
 
@@ -51,6 +54,22 @@ function LoadHomePage() {
        
        function LoadProjectsPage() {
 
+            let Project1Description = document.getElementById("Project1Description");
+            let FirstDescription = "A website I built using Adobe Muse.";
+            Project1Description.innerHTML = FirstDescription;
+
+            let Project2Description = document.getElementById("Project2Description");
+            let SecondDescription = "Two posters, one done solo and one done in a group utilizing the method of screen printing.";
+            Project2Description.innerHTML = SecondDescription;
+
+            let Project3Description = document.getElementById("Project3Description");
+            let ThirdDescription = "Using Photoshop's reflect tool to manipulate a painting I did.";
+            Project3Description.innerHTML = ThirdDescription;
+
+            //Testing LoadProjectsPage
+            console.log(FirstDescription);
+            console.log(SecondDescription);
+            console.log(ThirdDescription);
            };
 
 
