@@ -8,13 +8,31 @@
 
 (function () {
 
-    // Printing a confirmation of startup, followed by the current page's title, to assure the proper content is displayed.
     console.log("App Started.");
     console.info("Page Title: " + document.title);
 
-    // index.html or "About Me"
-    switch (document.title) {
-        case "About Me":
+    function Start() {
+        LoadPageContent();
+    }
+
+function LoadPageContent() {
+  switch (document.title) {
+    case "About Me":
+      LoadHomePage();
+      break;
+
+    case "Projects":
+      LoadProjectsPage();
+      break;
+
+    case "Contact":
+      LoadContactPage();
+      break;
+  }
+}
+
+function LoadHomePage() {
+
 
             // using let as a variable to control text injection to the page
             let Introduction = document.getElementById("Introduction");
@@ -25,17 +43,23 @@
             let PhotoInfo = 'My Graduating class from this past April. I am in the very back, second from the left with the long hair.';
             Description.innerHTML = PhotoInfo;
 
-            break;
+           };
+
+            
 
         // Projects.html
-        case "Projects":
+       
+       function LoadProjectsPage() {
 
-// Projects.html wasn't updated using javascript this assignment, I just wanted to have the layout structure complete
+           };
 
-            break;
+
+
+          
 
         // Contact.html - The focus of this Assignment
-        case "Contact":
+      
+            function LoadContactPage() {
 
             // Assigning an id to a variable, then taking the value inserted to print to the console
             let Name = document.getElementById("Name");
@@ -58,14 +82,14 @@
 
             });
 
-            break;
+            
     }
 
-    /*let myVariable = 500; (was just playing around with printing to the console) */
+   
 
 
 
-
+window.onload = Start;
 
 })(); // The end of the IIFE (Immediately Invoked Function Expression) Statement
 
