@@ -1,6 +1,6 @@
 /* app.js by Mike Roe (200166222) hosted at my server on Dreamhost */
 
-/* Properly using JavaScript to display text on my index.html */
+/* Creating json data and using AJAX to read it */
 
 "use strict";
 
@@ -47,8 +47,21 @@ function LoadHomePage() {
             console.log(PhotoInfo);
            };
 
+      let XHR = new XMLHttpRequest();
+      XHR.open("GET", "data.json", true);
+      XHR.send();
+      XHR.onreadystatechange = function () {
+        if ((this.readyState === 4) && (this.status === 200)) {
+          data = JSON.parse(this.responseText);
+        }
+        console.log("json data loaded");
+      };
 
-            
+      XHR.addEventListener("load", function () {
+           }, this);
+       
+    
+
 
         // Projects.html
        
@@ -71,12 +84,6 @@ function LoadHomePage() {
             console.log(SecondDescription);
             console.log(ThirdDescription);
            };
-
-
-
-          
-
-        // Contact.html - The focus of this Assignment
       
             function LoadContactPage() {
 
